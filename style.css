@@ -14,7 +14,7 @@
 }
 
 * {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -123,19 +123,16 @@ header button {
 }
 
 .cardFirst > div:first-child::before {
-  content: url('./images/icon-communities.svg');
+  content: url("./images/icon-communities.svg");
 }
 
-
 .cardFirst > div:last-child::before {
-  content: url('./images/icon-messages.svg');
+  content: url("./images/icon-messages.svg");
 }
 
 .cards {
-  margin: 2rem auto;
+  margin: 2rem 0;
   padding: 2rem;
-  border-radius: 20px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -148,18 +145,6 @@ header button {
 
 .cards h2 {
   margin: 2rem 0;
-}
-
-.cards:nth-child(4) {
-  margin-bottom: 15rem;
-}
-.cards:nth-child(5) {
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  width: 90%;
-  position: absolute;
-  transform: translate(5%, -65%);
 }
 
 .cards button {
@@ -195,31 +180,46 @@ footer {
   flex-direction: column;
 }
 
-.footer0 {
-  content: url("./images/logo.svg");
-  filter: brightness(0) invert(1);
-  text-align: left;
-}
-
 .footerItems * {
   margin-top: 1rem;
 }
 
-.footerItems > p:nth-child(1)::before {
-  content: url("./images/icon-location.svg");
-  width: 50px;
-  display: block;
-  float: left;
+.footerItems img {
+  filter: brightness(0) invert(1);
 }
 
-.footerItems:nth-child(1) > p:nth-child(2)::before {
+input[type="email"] {
+  width: 18rem;
+  margin-right: 3rem;
+  padding: 1rem;
+  color: black;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+#submit {
+  width: 12rem;
+  padding: 1rem;
+  background-color: var(--pink);
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+#submit:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.footerItems:nth-child(1) > p:nth-child(3)::before {
   content: url("./images/icon-phone.svg");
   width: 50px;
   display: block;
   float: left;
 }
 
-.footerItems > p:nth-child(3)::before {
+.footerItems > p:nth-child(4)::before {
   content: url("./images/icon-email.svg");
   width: 50px;
   display: block;
@@ -273,12 +273,6 @@ button {
   cursor: pointer;
 }
 
-.fabrand {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 button:hover {
   opacity: 0.5;
   cursor: pointer;
@@ -307,7 +301,7 @@ button:hover {
   }
 
   .cards {
-    margin: 2rem 4rem;
+    margin: 2rem 0;
     padding: 2rem;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -315,16 +309,13 @@ button:hover {
     text-align: left;
   }
 
-  .cards:nth-child(3) {
+  .cards:nth-child(4) {
     flex-direction: row;
   }
 
-  .cards:nth-child(5) {
+  .cards:nth-child(6) {
     flex-direction: column;
-    background-color: white;
-    width: 55%;
-    position: absolute;
-    transform: translate(35%, -45%);
+    align-items: center;
   }
 
   .cards button {
@@ -353,10 +344,14 @@ button:hover {
 
   .footer {
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .footerItems {
     padding-right: 2rem;
-    width: 25%;
+    width: 50%;
+  }
+  .footerItems > p {
+    width: 60%;
   }
 }

@@ -6,15 +6,15 @@
 
 :root {
   --pink: hsl(322, 100%, 66%);
-
   --vPaleCyan: hsl(193, 100%, 96%);
   --vdCyan: hsl(192, 100%, 9%);
   --gBlue: hsl(208, 11%, 55%);
   --gBlueOp: hsl(175, 94%, 97%);
+  --vPaleBlue: hsl(207, 100%, 98%);
 }
 
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -131,12 +131,50 @@ header button {
 }
 
 .cards {
-  margin: 2rem 0;
+  margin-top: 2rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.cards {
+  position: relative;
+}
+.cards:nth-child(odd) {
+  background-color: var(--vPaleBlue);
+}
+
+.cards:nth-child(odd) > * {
+  margin-top: 5rem;
+  margin-bottom: 8rem;
+}
+
+.cards:nth-child(odd)::before {
+  background-image: url("./images/bg-section-bottom-desktop-1.svg");
+  background-repeat: no-repeat;
+  background-size: contain 100%;
+  background-position: top;
+  z-index: 5;
+  filter: brightness(100);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.cards:nth-child(odd)::after {
+  background-image: url("./images/bg-section-top-desktop-1.svg");
+  background-repeat: no-repeat;
+  background-size: contain 100%;
+  background-position: bottom;
+  z-index: 5;
+  filter: brightness(100);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .cards img {
@@ -164,16 +202,34 @@ header button {
 
 footer {
   width: 100%;
-  padding: 10rem 4rem 8rem;
+  /* padding: 10rem 4rem 8rem; */
   background-color: black;
   color: white;
   text-align: left;
   display: block;
+  position: relative;
+}
+
+.cards:last-child {
+  position: relative;
+  padding-bottom: 15%;
+}
+
+.lastCard::after {
+  background-image: url("./images/bg-footer-top-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  filter: brightness(0);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .footer {
   width: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.3);
   color: white;
   text-align: left;
   display: flex;
@@ -195,6 +251,14 @@ input[type="email"] {
   color: black;
   font-size: 1rem;
   border-radius: 5px;
+}
+
+input:invalid {
+  border: 3px solid red;
+}
+
+input:valid {
+  border: 3px solid green;
 }
 
 #submit {
@@ -301,7 +365,7 @@ button:hover {
   }
 
   .cards {
-    margin: 2rem 0;
+    margin-top: 2rem;
     padding: 2rem;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -337,9 +401,14 @@ button:hover {
     padding: 4rem 2rem 4rem 5rem;
   }
 
+  .lastCard::after {
+    background-image: url("./images/bg-footer-top-desktop.svg");
+    bottom: 0px;
+  }
+
   footer {
-    margin-top: 2rem;
-    padding-left: 7rem;
+    /* margin-top: 2rem;
+    padding-left: 7rem; */
   }
 
   .footer {

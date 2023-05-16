@@ -122,6 +122,10 @@ header button {
   row-gap: 3rem;
 }
 
+h4 {
+  font-size: 4rem;
+}
+
 .cardFirst > div:first-child::before {
   content: url("./images/icon-communities.svg");
 }
@@ -132,7 +136,7 @@ header button {
 
 .cards {
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 2rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -147,14 +151,14 @@ header button {
 }
 
 .cards:nth-child(odd) > * {
-  margin-top: 5rem;
-  margin-bottom: 8rem;
+  margin-top: 8rem;
+  margin-bottom: 10rem;
 }
 
 .cards:nth-child(odd)::before {
-  background-image: url("./images/bg-section-bottom-desktop-1.svg");
+  background-image: url("./images/bg-section-bottom-mobile-1.svg");
   background-repeat: no-repeat;
-  background-size: contain 100%;
+  background-size: contain;
   background-position: top;
   z-index: 5;
   filter: brightness(100);
@@ -165,9 +169,9 @@ header button {
 }
 
 .cards:nth-child(odd)::after {
-  background-image: url("./images/bg-section-top-desktop-1.svg");
+  background-image: url("./images/bg-section-top-mobile-1.svg");
   background-repeat: no-repeat;
-  background-size: contain 100%;
+  background-size: contain;
   background-position: bottom;
   z-index: 5;
   filter: brightness(100);
@@ -202,7 +206,7 @@ header button {
 
 footer {
   width: 100%;
-  /* padding: 10rem 4rem 8rem; */
+  padding: 10rem 4rem 8rem;
   background-color: black;
   color: white;
   text-align: left;
@@ -253,11 +257,11 @@ input[type="email"] {
   border-radius: 5px;
 }
 
-input:invalid {
+input[type="email"]:invalid {
   border: 3px solid red;
 }
 
-input:valid {
+input[type="email"]:valid {
   border: 3px solid green;
 }
 
@@ -364,9 +368,13 @@ button:hover {
     background-size: cover;
   }
 
+  .cardFirst {
+    flex-direction: row;
+  }
+  
+
   .cards {
-    margin-top: 2rem;
-    padding: 2rem;
+    padding: 2rem 0 2rem 0;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
@@ -401,14 +409,17 @@ button:hover {
     padding: 4rem 2rem 4rem 5rem;
   }
 
+  .cards:nth-child(odd)::before {
+    background-image: url("./images/bg-section-bottom-desktop-1.svg");
+  }
+
+  .cards:nth-child(odd)::after {
+    background-image: url("./images/bg-section-top-desktop-1.svg");
+  }
+
   .lastCard::after {
     background-image: url("./images/bg-footer-top-desktop.svg");
     bottom: 0px;
-  }
-
-  footer {
-    /* margin-top: 2rem;
-    padding-left: 7rem; */
   }
 
   .footer {
